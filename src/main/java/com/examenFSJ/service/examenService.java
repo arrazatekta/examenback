@@ -23,5 +23,14 @@ public class examenService {
 	public examenEntity findById(String email) {
 		return repository.findById(email).orElse(null);		
 	}
+	
+	public String userdelete(String email) {
+		repository.deleteById(email);
+		return "Usuario eliminado! "+email;
+	}
+	
+	public examenEntity saveUser(examenEntity exaenti) {
+		return repository.save(exaenti);
+	}
 
 }
